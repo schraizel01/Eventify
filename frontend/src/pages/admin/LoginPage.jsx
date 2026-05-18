@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { Lock, Mail, Loader2, ArrowLeft } from 'lucide-react';
 import toast from 'react-hot-toast';
+import TextEventify from '../../assets/Text Eventify.png';
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -37,9 +38,7 @@ const LoginPage = () => {
           </button>
 
           <div className="mt-6 flex justify-center">
-            <span className="text-3xl font-black tracking-tighter text-primary">
-              EVENTIFY<span className="text-secondary">.</span>
-            </span>
+            <img src={TextEventify} alt="Eventify" className="h-10 w-auto" />
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
             Admin Portal

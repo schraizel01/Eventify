@@ -4,7 +4,10 @@ import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import EventCard from '../../components/EventCard';
 import api from '../../services/api';
-import { Search, Loader2 } from 'lucide-react';
+import { Search, Loader2, Compass } from 'lucide-react';
+import LogoEventify from '../../assets/Logo Eventify.png';
+import TextEventify from '../../assets/Text Eventify.png';
+import HeroImage from '../../assets/hero-image.png';
 
 const HomePage = () => {
   const [events, setEvents] = useState([]);
@@ -50,48 +53,53 @@ const HomePage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-20">
-            <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-              <div className="sm:text-center lg:text-left">
-                <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                  <span className="block xl:inline">Empowering your</span>{' '}
-                  <span className="block text-primary">academic journey</span>
-                </h1>
-                <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                  Find seminars and workshops in one place and register in seconds. Experience seamless event management for students and organizers.
-                </p>
-                <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                  <div className="rounded-md shadow">
-                    <Link
-                      to="/events"
-                      className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-accent md:py-4 md:text-lg md:px-10 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                    >
-                      Explore Events
-                    </Link>
-                  </div>
-                </div>
+      <section className="relative bg-[#f8f7ff] overflow-hidden py-12 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+            
+            {/* Left Content */}
+            <div className="mb-12 lg:mb-0 pr-0 lg:pr-8">
+              <div className="flex items-center gap-2 mb-8 justify-center lg:justify-start">
+                <img src={LogoEventify} alt="Logo" className="h-24 sm:h-32 md:h-40 w-auto drop-shadow-md -ml-2" />
+                <img src={TextEventify} alt="Eventify" className="h-8 sm:h-10 md:h-12 lg:h-14 w-auto" />
               </div>
-            </main>
+              
+              <p className="mt-3 text-[#4A5568] sm:text-lg md:text-xl lg:mx-0 max-w-lg text-center lg:text-left leading-relaxed font-medium">
+                Find seminars and workshops in one place and register in seconds. Empowering your academic journey with seamless event management.
+              </p>
+              
+              <div className="mt-10 flex justify-center lg:justify-start">
+                <Link
+                  to="/events"
+                  className="inline-flex items-center px-8 py-3.5 border border-transparent text-base font-bold rounded-2xl text-white bg-[#ab9afc] hover:bg-[#9783f9] shadow-lg transition-all hover:-translate-y-1"
+                >
+                  Explore Events
+                  <Compass className="ml-2 w-5 h-5" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Content */}
+            <div className="relative mx-auto w-full max-w-lg rounded-3xl shadow-xl overflow-hidden border-8 border-white bg-white">
+              <img
+                className="w-full h-auto object-cover"
+                src={HeroImage}
+                alt="Laptop with academic items"
+              />
+            </div>
+            
           </div>
-        </div>
-        <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-          <img
-            className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-            src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-            alt="Students at laptops"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent lg:via-transparent"></div>
         </div>
       </section>
 
       {/* Available Events Section */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full flex-grow">
         <div className="flex flex-col md:flex-row justify-between items-end mb-8">
-          <div>
-            <h2 className="text-3xl font-extrabold text-gray-900">Available Events</h2>
-            <p className="mt-2 text-gray-600">Discover and register for upcoming academic events.</p>
+          <div className="max-w-3xl">
+            <h2 className="text-4xl font-extrabold text-gray-900">Available Events</h2>
+            <p className="mt-3 text-gray-700 leading-relaxed text-sm sm:text-base">
+              Explore and register for upcoming seminars and workshops to empower your educational journey. Unlock your full potential by gaining industry-relevant skills and connecting with experts who are shaping the future.
+            </p>
           </div>
           
           <form onSubmit={handleSearch} className="mt-4 md:mt-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">

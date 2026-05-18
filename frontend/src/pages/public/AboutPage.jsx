@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import TextEventify from '../../assets/Text Eventify.png';
 
 const AboutPage = () => {
   return (
@@ -10,10 +11,8 @@ const AboutPage = () => {
       <main className="flex-grow flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl w-full">
           
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent inline-block">
-              EVENTIFY
-            </h1>
+          <div className="text-center mb-12 flex justify-center">
+            <img src={TextEventify} alt="Eventify" className="h-16 md:h-20 w-auto" />
           </div>
           
           <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 md:p-16 relative overflow-hidden">
